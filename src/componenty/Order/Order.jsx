@@ -1,17 +1,39 @@
+import dayjs from 'dayjs';
 import './order.css';
+import { useState } from 'react';
+
 export const Order = () => {
+  const [dateFrom, setDateFrom] = useState('');
+  const [dateTo, setDateTo] = useState('');
+
+  const numberOfDays = dayjs(dateTo).diff(dayjs(dateFrom), 'day') || 1;
+
+  console.log(numberOfDays);
+
   return (
     <form>
       <div className="form-fields">
-        <label htmlFor="field1" className="field-label">
-          Field 1:
+        <label htmlFor="dateFrom" className="field-label">
+          Od:
         </label>
-        <input id="field1" className="field-input" type="text" />
+        <input
+          id="dateFrom"
+          className="field-input"
+          type="date"
+          value={dateFrom}
+          onChange={(e) => setDateFrom(e.target.value)}
+        />
 
-        <label htmlFor="field2" className="field-label">
-          Field 2:
+        <label htmlFor="dateTo" className="field-label">
+          Do:
         </label>
-        <input id="field2" className="field-input" type="text" />
+        <input
+          id="dateTo"
+          className="field-input"
+          type="date"
+          value={dateTo}
+          onChange={(e) => setDateTo(e.target.value)}
+        />
 
         <label htmlFor="select" className="field-label">
           Select:
