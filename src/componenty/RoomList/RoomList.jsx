@@ -1,11 +1,11 @@
 import './RoomList.css';
-export const RoomList = () => {
+export const RoomList = ({ name, descr, image }) => {
   return (
     <div className="cards-row">
       <div className="card">
-        <img className="card__image" src="img/image1.svg" />
-        <div className="card__title">Card 1</div>
-        <div className="card__body">Sunt natus</div>
+        <img className="card__image" src={image} />
+        <div className="card__title">{name}</div>
+        <div className="card__body">{descr}</div>
       </div>
     </div>
   );
