@@ -1,12 +1,8 @@
-export const Detail = () => {
+export const Detail = ({ room }) => {
   return (
     <div className="column">
-      <img src="img/image1.svg" />
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque
-        accusantium, dolor quisquam doloremque quod nobis temporibus ducimus
-        sapiente consectetur distinctio assumenda, nisi suscipit saepe. Vero.
-      </p>
+      <img src={room.image} />
+      <p>{room.info}</p>
     </div>
   );
 };
