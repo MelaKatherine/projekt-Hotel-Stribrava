@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { RoomList } from '../RoomList/RoomList';
+import { RoomItem } from '../RoomItem/RoomItem';
 import './Rooms.css';
 export const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -13,6 +13,7 @@ export const Rooms = () => {
     fetchName();
     //console.log('jsem tady');
   }, []);
+
   return (
     <section className="dark">
       <div className="container">
@@ -21,7 +22,7 @@ export const Rooms = () => {
         <div className="cards-row">
           {console.log(rooms)}
           {rooms.map((room) => (
-            <RoomList name={room.name} descr={room.info} image={room.image} />
+            <RoomItem name={room.name} price={room.price} image={room.image} />
           ))}
         </div>
       </div>
